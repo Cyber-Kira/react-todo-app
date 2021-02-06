@@ -5,18 +5,23 @@ import './todo-list-item.css';
 export default class TodoListItem extends Component {
 
 	state = {
-		done: false
+		done: false,
+		important: false
 	};
 
 	onLabelClick = () => {
-		this.setState({ 
-			done: !this.state.done 
+		this.setState(({done}) => {
+			return {
+				done: !done
+			}
 		});
 	};
 
 	onMarkImportant = () => {
-		this.setState({
-			important: !this.state.important
+		this.setState(({important}) => {
+			return {
+				important: !important
+			}
 		});
 	};
 
